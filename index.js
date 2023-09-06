@@ -75,4 +75,4 @@ client.on("error", (err) => {
   console.log("Redis error =>", err);
 });
 
-module.exports = app;
+// module.exports = app;
