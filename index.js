@@ -63,8 +63,8 @@ client.on("connect", async () => {
   try {
     await sequelize.sync();
     console.log("Connected to DB");
-    app.listen(1010, async () => {
-      console.log("Server is running at 1010");
+    app.listen(5000, async () => {
+      console.log("Server is running at 5000");
     });
   } catch (error) {
     console.error("Error during Sequelize sync or server listening:", err);
