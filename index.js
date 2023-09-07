@@ -1,15 +1,6 @@
 const express = require("express");
 const { sequelize } = require("./configs/db");
 const { client } = require("./configs/redis");
-const { Student } = require("./model/student.model");
-const jwt = require("jsonwebtoken");
-const { Department } = require("./model/department.model");
-const { Course } = require("./model/course.model");
-const { Enrollment } = require("./model/enrollment.model");
-const { Instructor } = require("./model/instructor.model");
-const { Assignment } = require("./model/assignment.model");
-const { Submission } = require("./model/submissions.model");
-const { Sequelize } = require("sequelize");
 const { studentRouter } = require("./routes/student.route");
 const { assignmentRouter } = require("./routes/assignment.route");
 const { courseRouter } = require("./routes/course.route");
