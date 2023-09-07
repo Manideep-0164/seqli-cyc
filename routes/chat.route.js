@@ -6,7 +6,7 @@ const { authentication } = require("../middlewares/authentication.middleware");
 const { authorize } = require("../middlewares/authorization.middleware");
 const { makeOpenAIRequest } = require("../helpers/makeAiRequest");
 
-chatRouter.get("/api/ai/chat", async (req, res) => {
+chatRouter.post("/api/ai/chat", async (req, res) => {
   try {
     const { message } = req.body;
 
@@ -132,7 +132,7 @@ chatRouter.get("/api/ai/chat", async (req, res) => {
 });
 
 // Route 2: Make a request to OpenAI API taking prompt from the body and debug it
-chatRouter.get(
+chatRouter.post(
   "/api/ai/assignment",
   authentication,
   authorize(["instructor", "admin"]),
