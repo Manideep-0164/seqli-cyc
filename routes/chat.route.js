@@ -132,7 +132,7 @@ chatRouter.get("/api/ai/chat", async (req, res) => {
 });
 
 // Route 2: Make a request to OpenAI API taking prompt from the body and debug it
-chatRouter.post(
+chatRouter.get(
   "/api/ai/assignment",
   authentication,
   authorize(["instructor", "admin"]),

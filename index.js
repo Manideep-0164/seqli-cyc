@@ -1,4 +1,6 @@
 const express = require("express");
+const app = express();
+const cors = require("cors");
 const { sequelize } = require("./configs/db");
 const { client } = require("./configs/redis");
 const { studentRouter } = require("./routes/student.route");
@@ -10,11 +12,10 @@ const { instructorRouter } = require("./routes/instructor.route");
 const { submissionRouter } = require("./routes/submission.route");
 const { adminRouter } = require("./routes/admin.route");
 const { announcementRouter } = require("./routes/announcement.route");
+const { chatRouter } = require("./routes/chat.route");
 
-const app = express();
-
+app.use(cors());
 app.use(express.json());
-app.use(require("cors")());
 
 app.get("/", async (req, res) => {
   try {
@@ -25,6 +26,7 @@ app.get("/", async (req, res) => {
   }
 });
 
+app.use("", chatRouter);
 app.use("", studentRouter);
 app.use("", courseRouter);
 app.use("", departmentRouter);
